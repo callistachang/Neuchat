@@ -1,0 +1,31 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  color: black;
+  text-align: center;
+  padding: 2em;
+}
+
+.brand-text {
+  font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  padding-bottom: 1em;
+}
+
+.small-text {
+  color: #656565;
+  font-size: 0.9em;
+}
+
+.chat-button {
+  display: block;
+  background-color: white;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  border: 1px solid black;
+  border-radius: 1em 0 1em 0;
+  padding: 0.8em 2em;
+  margin: 2em auto 1em;
+  box-shadow: 0.05em 0.05em gray;
+  cursor: pointer;
+}
