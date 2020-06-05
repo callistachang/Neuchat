@@ -1,1 +1,16 @@
 @import "base.css";
+
+#chatroom-message-area {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 1em;
+  height: 70vh;
+  width: 80vw;
+  text-align: left;
+  padding: 2vw;
+  overflow: scroll;
+}
+
+#chatroom-footer {
+  display: flex;
+}
