@@ -6,14 +6,13 @@
 
 <p id="question-text">what do you want to talk about?</p>
 
-<form action="/tags" method="post">
+<!-- Search form -->
+<form action="{% url 'tags' %}" method="post">
   {% csrf_token %}
-  <input
-    type="text"
-    value="Amsterdam,Washington,Sydney,Beijing,Cairo"
-    data-role="tagsinput"
-  />
-  <input class="chat-button" type="submit" value="start chatting" />
+  <!-- input[name="tags"] is required for this form to work -->
+  <input type="text" data-role="tagsinput" id="tags" name="tags" />
+  <!-- input[type="submit"] is required for this form to work -->
+  <input class="chat-button" type="submit" value="start chatting"></input>
 </form>
 
 <p class="small-text">
@@ -31,5 +30,4 @@
     ><u>my github</u></a
   >
 </div>
-
 {% endblock content %}
