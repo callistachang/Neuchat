@@ -1,6 +1,6 @@
 @import "base.css";
 
-#question-text {
+#medium-text {
   font-size: 1.2em;
 }
 
@@ -41,7 +41,7 @@
 
 /* Footer */
 
-.footer {
+.home-footer {
   display: flex;
   justify-content: center;
   margin-top: 3em;

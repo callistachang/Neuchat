@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 </head>
 
-<p id="question-text">what do you want to talk about?</p>
+<p id="medium-text">what do you want to talk about?</p>
 
 <!-- Search form -->
 <form action="{% url 'tags' %}" method="post">
@@ -12,7 +12,7 @@
   <!-- input[name="tags"] is required for this form to work -->
   <input type="text" data-role="tagsinput" id="tags" name="tags" />
   <!-- input[type="submit"] is required for this form to work -->
-  <input class="chat-button" type="submit" value="start chatting"></input>
+  <input class="base-button" type="submit" value="start chatting"></input>
 </form>
 
 <p class="small-text">
@@ -20,10 +20,10 @@
   database)
 </p>
 
-<div class="footer">
+<div class="home-footer">
   <img
     class="github-logo"
-    src="{% static 'images/github-logo.png' %}"
+    src="{% static 'images/github-logo-32px.png' %}"
     alt="Github Logo"
   />
   <a href="https://github.com/callistachang" class="small-text" target="_blank"

@@ -4,27 +4,30 @@
   <link rel="stylesheet" href="{% static 'css/chatroom.css' %}" />
 </head>
 
-<div id="chatroom-message-area" class="disable-scrollbars">
-  <!-- <input type="text" id="chat-input" /> -->
-</div>
+<div id="chatroom-message-area" class="disable-scrollbars"></div>
 
 <div id="chatroom-footer">
   <button
     id="chatroom-exit-button"
     type="submit"
-    class="chat-button"
+    class="base-button chatroom-button"
     value="Exit (press esc)"
   >
-    exit
+    exit <span class="grey-text">(press esc)</span>
   </button>
-  <input id="chatroom-type-field" type="text" />
+  <textarea
+    id="chatroom-type-input"
+    class="disable-scrollbars"
+    type="text"
+    autofocus
+  ></textarea>
   <button
     id="chatroom-send-button"
     type="submit"
-    class="chat-button"
+    class="base-button chatroom-button"
     value="Submit (press enter)"
   >
-    submit
+    submit <span class="grey-text">(press enter)</span>
   </button>
 </div>
 

@@ -2,14 +2,22 @@ body {
   font-family: "DM Sans", sans-serif;
   color: black;
   text-align: center;
-  padding: 2em;
+  padding: 3vh;
 }
 
 .brand-text {
   font-weight: bold;
   font-size: 1.5em;
   letter-spacing: 0.05em;
-  padding-bottom: 1em;
+}
+
+.base-header {
+  padding-bottom: 2vh;
+}
+
+.brand-logo {
+  width: 32px;
+  padding-bottom: 0.5em;
 }
 
 .small-text {
@@ -17,7 +25,11 @@ body {
   font-size: 0.9em;
 }
 
-.chat-button {
+.grey-text {
+  color: rgb(117, 117, 117);
+}
+
+.base-button {
   display: block;
   background-color: white;
   text-align: center;

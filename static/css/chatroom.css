@@ -4,13 +4,43 @@
   display: inline-block;
   border: 1px solid black;
   border-radius: 1em;
-  height: 70vh;
+  height: 65vh;
   width: 80vw;
   text-align: left;
   padding: 2vw;
-  overflow: scroll;
+  resize: none;
 }
 
 #chatroom-footer {
   display: flex;
+  padding: 0 8.5vw;
 }
+
+.chatroom-button {
+  padding: 0.5em 0;
+  flex: 1;
+  margin-top: 0.5em;
+}
+
+#chatroom-type-input {
+  flex: 5;
+  background-color: #f2f2f2;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  border: none;
+  border-radius: 1em;
+  box-shadow: 0.05em 0.05em lightgray;
+  padding: 0.8em 1em;
+  margin: 0.5em;
+  text-align: left;
+  overflow: scroll;
+}
+
+@media screen and (min-width: 800px) {
+  .bootstrap-tagsinput {
+    width: 60%;
+  }
+}
+
+/* TODO: mobile-responsive footer, split to 2 columns */
