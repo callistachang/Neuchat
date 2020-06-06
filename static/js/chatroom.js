@@ -1,17 +1,29 @@
-messageArea = $("#message-area");
-sendChatButton = $("#chatroom-send-button");
-exitChatButton = $("#chatroom-exit-button");
-screen = $("body");
+const messageArea = $("#chatroom-message-area");
+const sendChatButton = $("#chatroom-send-button");
+const exitChatButton = $("#chatroom-exit-button");
+const inputField = $("#chatroom-type-input");
+const screen = $("body");
+
+// TODO
+// blit the message on the screen
+const appendMessage = (message) => {
+  messageArea.append("<p>" + message + "</p>");
+};
 
 $(document).ready(() => {
+  // TODO: make the web sockets work using the group names
+  // TODO: make the brand button clickable which shows an alert if they wanted to leave
+  // connect to websocket
   var socket = new WebSocket("ws://" + window.location.host + "/ws/chat/");
-  console.log("Successfully connected to " + socket.url);
+  console.log("successfully connected to " + socket.url);
 
+  // detect when a message is sent through to the socket
   socket.onmessage = (e) => {
     const data = JSON.parse(e.data);
-    print(data);
+    appendMessage(data.message);
   };
 
+  // detect when the user clicks enter or escape
   screen.keyup((e) => {
     if (e.key == "Enter") {
       sendChatButton.click();
@@ -23,10 +35,17 @@ $(document).ready(() => {
   //TODO
   sendChatButton.click(() => {
     console.log("send clicked");
+    socket.send(
+      JSON.stringify({
+        message: inputField.val(),
+      })
+    );
+    inputField.val("");
   });
 
   //TODO
   exitChatButton.click(() => {
     console.log("exit clicked");
+    // window.location.href = "../";
   });
 });
