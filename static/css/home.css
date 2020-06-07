@@ -1,10 +1,31 @@
 @import "base.css";
 
-#medium-text {
-  font-size: 1.2em;
+#home-container {
+  text-align: center;
+  margin: 0 1em;
 }
 
-/* Search Field */
+.home-chat-button {
+  display: block;
+  margin: 1.5em auto 0.8em;
+  padding: 0.8em 2em;
+}
+
+/* Footer */
+
+.home-footer {
+  display: flex;
+  margin-top: 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-logo {
+  width: 20px;
+  margin-right: 0.3em;
+}
+
+/* Tag Input Field */
 
 .bootstrap-tagsinput {
   background-color: #f2f2f2;
@@ -14,40 +35,25 @@
   border: none;
   border-radius: 1em;
   box-shadow: 0.05em 0.05em lightgray;
+  text-align: left;
   padding: 0.8em 1em;
   width: 80%;
-  margin-top: 0.2em;
-  text-align: left;
 }
 
 .bootstrap-tagsinput .tag {
-  background: white;
-  border: 1px solid black;
-  border-color: #656565;
-  padding: 0.2em 1em;
+  background-color: white;
+  border: 1px solid #656565;
   font-weight: 500;
-  color: black;
   border-radius: 2em;
   box-shadow: 0.05em 0.05em lightgray;
   font-size: 1em;
   line-height: 2em;
+  padding: 0.2em 1em;
+  color: black;
 }
 
 @media screen and (min-width: 800px) {
   .bootstrap-tagsinput {
     width: 60%;
   }
-}
-
-/* Footer */
-
-.home-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 3em;
-}
-
-.github-logo {
-  width: 20px;
-  margin-right: 0.3em;
 }

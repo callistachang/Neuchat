@@ -1,29 +1,28 @@
 @import "base.css";
 
+#chatroom-container {
+  display: grid;
+  grid-template-columns: 4vw 42vw 42vw 4vw;
+  grid-template-rows: 60vh 8vh 10vh;
+  row-gap: 2vh;
+  justify-content: space-around;
+  grid-template-areas:
+    ". main main ."
+    ". input input ."
+    ". button-left button-right .";
+}
+
 #chatroom-message-area {
-  display: inline-block;
+  grid-area: main;
   border: 1px solid black;
   border-radius: 1em;
-  height: 65vh;
-  width: 80vw;
   text-align: left;
   padding: 2vw;
   resize: none;
 }
 
-#chatroom-footer {
-  display: flex;
-  padding: 0 8.5vw;
-}
-
-.chatroom-button {
-  padding: 0.5em 0;
-  flex: 1;
-  margin-top: 0.5em;
-}
-
 #chatroom-type-input {
-  flex: 5;
+  grid-area: input;
   background-color: #f2f2f2;
   font-family: "DM Sans", sans-serif;
   font-size: 1em;
@@ -32,15 +31,33 @@
   border-radius: 1em;
   box-shadow: 0.05em 0.05em lightgray;
   padding: 0.8em 1em;
-  margin: 0.5em;
   text-align: left;
   overflow: scroll;
 }
 
-@media screen and (min-width: 800px) {
-  .bootstrap-tagsinput {
-    width: 60%;
-  }
+#chatroom-type-input:focus {
+  outline: none;
 }
 
-/* TODO: mobile-responsive footer, split to 2 columns */
+#chatroom-exit-button {
+  grid-area: button-left;
+}
+
+#chatroom-send-button {
+  grid-area: button-right;
+}
+
+@media screen and (min-width: 800px) {
+  #chatroom-container {
+    display: grid;
+    grid-template-columns: 8vw 10vw 60vw 10vw 8vw;
+    grid-template-rows: 65vh 15vh;
+    row-gap: 2vh;
+    column-gap: 1vw;
+    /* justify-content: space-between; */
+
+    grid-template-areas:
+      ". main main main ."
+      ". button-left input button-right .";
+  }
+}

@@ -23,13 +23,13 @@
     />
   </head>
   <body>
-    <div class="base-header">
+    <div id="header-container">
       <img
         src="{% static 'images/chatter-logo-200px.png' %}"
         alt="Chatter Logo"
-        class="brand-logo"
+        class="header-brand-logo"
       />
-      <span class="brand-text">Chatter</span>
+      <span class="header-brand-text">Chatter</span>
     </div>
 
     {% block content %} {% endblock content %}

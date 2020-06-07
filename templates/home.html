@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+</head>
+
+<div id="home-container">
+  <p class="medium-text">what do you want to talk about?</p>
+
+  <!-- search form -->
+  <form action="{% url 'tags' %}" method="post">
+    {% csrf_token %}
+    <!-- input[name="tags"] is required for this form to work -->
+    <input id="home-tags-input" type="text" data-role="tagsinput" name="tags" />
+    <!-- input[type="submit"] is required for this form to work -->
+    <input class="base-button home-chat-button" type="submit" value="start chatting"></input>
+  </form>
+  
+  <p class="small-text grey-text">
+    (all your messages are secured with 256-bit encryption and not stored into any
+    database)
+  </p>
+  
+  <div class="home-footer">
+    <img
+      class="github-logo"
+      src="{% static 'images/github-logo-32px.png' %}"
+      alt="Github Logo"
+    />
+    <span class="small-text grey-text">callista chang | <a href="https://github.com/callistachang" target="_blank"
+      ><u>my github</u></a
+    ></span>
+
+    
+  </div>
+</div>
+
+
+{% endblock content %}

@@ -4,30 +4,32 @@
   <link rel="stylesheet" href="{% static 'css/chatroom.css' %}" />
 </head>
 
-<div id="chatroom-message-area" class="disable-scrollbars"></div>
+<div id="chatroom-container">
+  <!-- TODO: fix the overflow -->
+  <div id="chatroom-message-area" class="disable-scrollbars"></div>
 
-<div id="chatroom-footer">
   <button
     id="chatroom-exit-button"
     type="submit"
-    class="base-button chatroom-button"
+    class="base-button"
     value="Exit (press esc)"
   >
-    exit <span class="grey-text">(press esc)</span>
+    exit <span class="grey-text">(esc)</span>
   </button>
   <textarea
     id="chatroom-type-input"
     class="disable-scrollbars"
     type="text"
+    placeholder="Type here..."
     autofocus
   ></textarea>
   <button
     id="chatroom-send-button"
     type="submit"
-    class="base-button chatroom-button"
+    class="base-button"
     value="Submit (press enter)"
   >
-    submit <span class="grey-text">(press enter)</span>
+    submit <span class="grey-text">(enter)</span>
   </button>
 </div>
 

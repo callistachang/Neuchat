@@ -6,7 +6,7 @@ from .utils import csv_to_list
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 
 def chatroom(request):
@@ -23,4 +23,4 @@ def view_tags(request):
             return HttpResponse(form.errors)
     else:
         form = TagsForm()
-        return render(request, 'index.html', {'form': form})
+        return render(request, 'home.html', {'form': form})
