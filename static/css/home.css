@@ -1,13 +1,20 @@
 @import "base.css";
 
 #home-container {
+  flex-direction: column;
   text-align: center;
   margin: 0 1em;
+  align-items: stretch;
+}
+
+.home-question-text {
+  margin-bottom: 1em;
 }
 
 .home-chat-button {
   display: block;
-  margin: 1.5em auto 0.8em;
+  flex: 2;
+  margin: 3em auto 0.8em;
   padding: 0.8em 2em;
 }
 
@@ -28,26 +35,33 @@
 /* Tag Input Field */
 
 .bootstrap-tagsinput {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  /* background: linear-gradient(145deg, #bac2c7, #dde7ec); */
   font-family: "DM Sans", sans-serif;
   font-size: 1em;
   font-weight: normal;
   border: none;
   border-radius: 1em;
-  box-shadow: 0.05em 0.05em lightgray;
+  /* box-shadow: 0.05em 0.05em lightgray; */
+  /* box-shadow: 20px 20px 60px #c4cbcf, -20px -20px 60px #ffffff; */
+  /* box-shadow: 0.5 0.5em 1em #b0b8bc, -0.5em -0.5em 1em #eef8fe; */
+  background: #bcd0dc;
+  box-shadow: 1em 1em 1.8em #a0b1bb, -1em -1em 1.8em #d8effd;
   text-align: left;
   padding: 0.8em 1em;
   width: 80%;
 }
 
 .bootstrap-tagsinput .tag {
-  background-color: white;
-  border: 1px solid #656565;
+  /* background-color: white; */
+  /* border: 1px solid #656565; */
+  background: #bcd0dc;
   font-weight: 500;
   border-radius: 2em;
-  box-shadow: 0.05em 0.05em lightgray;
+  /* box-shadow: 0.05em 0.05em lightgray; */
+  box-shadow: 0.5em 0.5em 1em #7c8991, -0.5em -0.5em 1em #d8effd;
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1.8em;
   padding: 0.2em 1em;
   color: black;
 }

@@ -5,13 +5,13 @@
 </head>
 
 <div id="home-container">
-  <p class="medium-text">what do you want to talk about?</p>
+  <p class="medium-text home-question-text">what do you want to talk about?</p>
 
   <!-- search form -->
   <form action="{% url 'tags' %}" method="post">
     {% csrf_token %}
     <!-- input[name="tags"] is required for this form to work -->
-    <input id="home-tags-input" type="text" data-role="tagsinput" name="tags" />
+    <input class="home-tags-input" type="text" data-role="tagsinput" name="tags" placeholder="type here..."/>
     <!-- input[type="submit"] is required for this form to work -->
     <input class="base-button home-chat-button" type="submit" value="start chatting"></input>
   </form>

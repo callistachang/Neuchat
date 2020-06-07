@@ -1,6 +1,7 @@
 body {
   font-family: "DM Sans", sans-serif;
-  color: black;
+  color: rgb(39, 39, 39);
+  background-color: #bcd0dc;
 }
 
 /* Header */
@@ -16,22 +17,33 @@ body {
   font-weight: bold;
   font-size: 1.5em;
   letter-spacing: 0.05em;
+  color: black;
 }
 
 .header-brand-logo {
   width: 32px;
+  margin-right: 0.2em;
 }
 
 /* Utility */
 
 .base-button {
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
   font-family: "DM Sans", sans-serif;
-  border: 1px solid black;
-  border-radius: 1em 0 1em 0;
-  box-shadow: 0.05em 0.05em gray;
+  /* border: 1px solid black; */
+  border-radius: 2em 0 2em 0;
+  border: transparent;
+  /* border-radius: 70px; */
+  /* box-shadow: 0.05em 0.05em gray; */
+  background: #bcd0dc;
+  box-shadow: 1em 1em 1.8em #a0b1bb, -1em -1em 1.8em #cbdfec;
   cursor: pointer;
+}
+
+.base-button:hover {
+  box-shadow: inset 1em 1em 1.8em #a0b1bb, inset -1em -1em 1.8em #cbdfec;
+  outline: none;
 }
 
 .small-text {
@@ -39,7 +51,7 @@ body {
 }
 
 .grey-text {
-  color: rgb(117, 117, 117);
+  color: rgb(93, 93, 93);
 }
 
 .medium-text {

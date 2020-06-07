@@ -14,22 +14,26 @@
 
 #chatroom-message-area {
   grid-area: main;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  /* background: #bcd0dc; */
+  box-shadow: inset 1em 1em 1.8em #a0b1bb, inset -1em -1em 1.8em #d8effd;
   border-radius: 1em;
   text-align: left;
-  padding: 2vw;
+  padding: 1em 1.5em;
   resize: none;
 }
 
 #chatroom-type-input {
   grid-area: input;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   font-family: "DM Sans", sans-serif;
   font-size: 1em;
   font-weight: normal;
   border: none;
   border-radius: 1em;
-  box-shadow: 0.05em 0.05em lightgray;
+  /* box-shadow: 0.05em 0.05em lightgray; */
+  background: #bcd0dc;
+  box-shadow: 1em 1em 1.8em #a0b1bb, -1em -1em 1.8em #d8effd;
   padding: 0.8em 1em;
   text-align: left;
   overflow: scroll;
@@ -59,5 +63,9 @@
     grid-template-areas:
       ". main main main ."
       ". button-left input button-right .";
+  }
+
+  #chatroom-message-area {
+    padding: 2em;
   }
 }
