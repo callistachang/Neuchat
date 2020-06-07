@@ -21,6 +21,9 @@
   text-align: left;
   padding: 1em 1.5em;
   resize: none;
+  overflow-x: visible;
+  word-wrap: break-word;
+  overflow-y: scroll;
 }
 
 #chatroom-type-input {

@@ -4,10 +4,18 @@ const exitChatButton = $("#chatroom-exit-button");
 const inputField = $("#chatroom-type-input");
 const screen = $("body");
 
-// TODO
-// blit the message on the screen
+// FIXME: shift+click does not blit a newline onscreen
 const appendMessage = (message) => {
-  messageArea.append("<p>" + message + "</p>");
+  message.replace(/[\r\n]+/g, "<br>");
+  let identifier = "<strong>You: </strong>";
+  messageArea
+    .append("<p>" + identifier + message + "</p>")
+    .children(":last")
+    .hide()
+    .fadeIn(150);
+  messageArea.animate({ scrollTop: messageArea.prop("scrollHeight") });
+  console.log(messageArea.scrollTop);
+  console.log(messageArea.clientHeight);
 };
 
 $(document).ready(() => {
@@ -18,21 +26,25 @@ $(document).ready(() => {
   console.log("successfully connected to " + socket.url);
 
   // detect when a message is sent through to the socket
+  // the user must be detected and must show which is the current user
   socket.onmessage = (e) => {
     const data = JSON.parse(e.data);
     appendMessage(data.message);
   };
 
   // detect when the user clicks enter or escape
-  screen.keyup((e) => {
+  screen.keydown((e) => {
     if (e.key == "Enter") {
-      sendChatButton.click();
+      if (e.shiftKey) {
+      } else {
+        e.preventDefault();
+        sendChatButton.click();
+      }
     } else if (e.key == "Escape") {
       exitChatButton.click();
     }
   });
 
-  //TODO
   sendChatButton.click(() => {
     console.log("send clicked");
     socket.send(
@@ -43,9 +55,10 @@ $(document).ready(() => {
     inputField.val("");
   });
 
-  //TODO
+  //TODO: send alert before exiting
   exitChatButton.click(() => {
     console.log("exit clicked");
     // window.location.href = "../";
+    window.confirm("Are you sure you want to exit the chat?");
   });
 });
