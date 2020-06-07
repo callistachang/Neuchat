@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "chatter"
+name = "neuchat"
 version = "0.1.0"
 description = "A minimal anonymous chat app"
 authors = ["Callista Chang <changcallista@gmail.com>"]
