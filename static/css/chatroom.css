@@ -3,7 +3,7 @@
 #chatroom-container {
   display: grid;
   grid-template-columns: 4vw 42vw 42vw 4vw;
-  grid-template-rows: 60vh 8vh 10vh;
+  grid-template-rows: 40vh 8vh 6vh;
   row-gap: 2vh;
   justify-content: space-around;
   grid-template-areas:
@@ -36,6 +36,8 @@
   border-radius: 1em;
   /* box-shadow: 0.05em 0.05em lightgray; */
   background: #bcd0dc;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 1em 1em 1.8em #a0b1bb, -1em -1em 1.8em #d8effd;
   box-shadow: 1em 1em 1.8em #a0b1bb, -1em -1em 1.8em #d8effd;
   padding: 0.8em 1em;
   text-align: left;

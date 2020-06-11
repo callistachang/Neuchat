@@ -2,7 +2,7 @@ const messageArea = $("#chatroom-message-area");
 const sendChatButton = $("#chatroom-send-button");
 const exitChatButton = $("#chatroom-exit-button");
 const inputField = $("#chatroom-type-input");
-const screen = $("body");
+const screen = $("chatroom-container");
 
 // FIXME: shift+click does not blit a newline onscreen
 const appendMessage = (message) => {
@@ -20,7 +20,7 @@ const appendMessage = (message) => {
 
 $(document).ready(() => {
   // TODO: make the web sockets work using the group names
-  // TODO: make the brand button clickable which shows an alert if they wanted to leave
+  // TODO: redirect brand button to exit
   // connect to websocket
   var socket = new WebSocket("ws://" + window.location.host + "/ws/chat/");
   console.log("successfully connected to " + socket.url);
@@ -55,10 +55,16 @@ $(document).ready(() => {
     inputField.val("");
   });
 
-  //TODO: send alert before exiting
+  //TODO: redirect esc to exit
   exitChatButton.click(() => {
     console.log("exit clicked");
-    // window.location.href = "../";
-    window.confirm("Are you sure you want to exit the chat?");
+    let exit = window.confirm("Are you sure you want to exit the chat?");
+    if (exit) {
+      console.log("yo");
+      console.log(self.location.protocol + "//" + self.location.host);
+      window.location.replace(
+        self.location.protocol + "//" + self.location.host
+      );
+    }
   });
 });

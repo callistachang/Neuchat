@@ -1,0 +1,30 @@
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+# look in the client directory for the build context
+# you could add more scripts and build contexts if you have other tests
+before_install:
+  - docker build -t callistachang/neuchat .
+
+script:
+  - docker run callistachang/neuchat python manage.py test
+
+after_success:
+  - docker build -t callistachang/neuchat .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push callistachang/neuchat
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-2
+#   app: multi-docker
+#   env: MultiDocker-env
+#   bucket_name: elasticbeanstalk-us-east-2-804847848812
+#   bucket_path: docker-multi
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
