@@ -1,4 +1,4 @@
-FROM python:3.6-slim-buster as builder
+FROM python:3.6-slim-buster
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONHASHSEED=random \
@@ -21,4 +21,4 @@ COPY . /code
 
 FROM nginx
 EXPOSE 80
-COPY --from=builder /code/static /usr/share/nginx/html
+COPY --from=0 /code/static /usr/share/nginx/html
