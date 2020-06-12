@@ -5,13 +5,11 @@ language: python
 services:
   - docker
 
-# look in the client directory for the build context
-# you could add more scripts and build contexts if you have other tests
 before_install:
-  - pip install poetry
+  - docker build -t callistachang/neuchat .
 
-install:
-  - poetry install
+# install:
+#   - poetry install
 
 script:
   - docker run callistachang/neuchat python manage.py test
@@ -20,15 +18,14 @@ after_success:
   - docker build -t callistachang/neuchat .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push callistachang/neuchat
-
-deploy:
-  provider: elasticbeanstalk
-  region: ap-southeast-1
-  app: neuchat
-  env: Neuchat-env
-  bucket_name: elasticbeanstalk-ap-southeast-1-804847848812
-  bucket_path: neuchat
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: ap-southeast-1
+#   app: neuchat
+#   env: Neuchat-env
+#   bucket_name: elasticbeanstalk-ap-southeast-1-804847848812
+#   bucket_path: neuchat
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY

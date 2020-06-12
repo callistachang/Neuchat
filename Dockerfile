@@ -19,6 +19,6 @@ RUN poetry install -n
 
 COPY . /code
 
-FROM nginx
-EXPOSE 80
-COPY --from=0 /code/static /usr/share/nginx/html
+# FROM nginx
+# EXPOSE 80
+# COPY --from=0 /code/static /usr/share/nginx/html
