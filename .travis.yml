@@ -8,7 +8,10 @@ services:
 # look in the client directory for the build context
 # you could add more scripts and build contexts if you have other tests
 before_install:
-  - docker build -t callistachang/neuchat .
+  - pip install poetry
+
+install:
+  - poetry install
 
 script:
   - docker run callistachang/neuchat python manage.py test
