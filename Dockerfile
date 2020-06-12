@@ -1,4 +1,4 @@
-FROM python:3.6-slim-buster
+FROM python:3.6-slim-buster as builder
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONHASHSEED=random \
@@ -18,3 +18,7 @@ COPY poetry.lock pyproject.toml /code/
 RUN poetry install -n
 
 COPY . /code
+
+FROM nginx
+EXPOSE 80
+COPY --from=builder /code/static /usr/share/nginx/html
